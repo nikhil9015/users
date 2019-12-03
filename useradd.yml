@@ -1,0 +1,11 @@
+---
+
+# Create Nagios User and Group 
+  - name: Add group "nagios"
+    group: name=nagios
+    become: true
+
+  - name: Add user "nagios"  
+    user: name=nagios groups=nagios password="" shell=/bin/bash append=yes comme
+nt="Nagios nologin User" state=present
+    become: true
